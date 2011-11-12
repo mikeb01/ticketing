@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/web"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/integration/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="lib/dist/guava-10.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/test/mockito-all-1.8.5.jar"/>
+	<classpathentry kind="lib" path="lib/dist/javolution-5.5.1.jar" sourcepath="lib/source/javolution-5.5.1-sources.jar"/>
+	<classpathentry kind="lib" path="lib/dist/disruptor-2.6.jar" sourcepath="lib/source/disruptor-src-2.6.jar"/>
+	<classpathentry kind="lib" path="lib/dist/activation.jar"/>
+	<classpathentry kind="lib" path="lib/dist/eclipselink-2.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/dist/javaee-16.jar"/>
+	<classpathentry kind="lib" path="lib/dist/javamail-141.jar"/>
+	<classpathentry kind="lib" path="lib/dist/jsf-api.jar"/>
+	<classpathentry kind="lib" path="lib/dist/jsf-impl.jar"/>
+	<classpathentry kind="lib" path="lib/dist/pro.jar"/>
+	<classpathentry kind="lib" path="lib/dist/resin-eclipselink.jar"/>
+	<classpathentry kind="lib" path="lib/dist/resin.jar"/>
+	<classpathentry kind="lib" path="lib/dist/validation-api-1.0.0.GA.jar"/>
+	<classpathentry kind="lib" path="lib/dist/webservices-api.jar"/>
+	<classpathentry kind="lib" path="lib/dist/webservices-extra-api.jar"/>
+	<classpathentry kind="lib" path="lib/dist/webutil.jar"/>
+	<classpathentry kind="lib" path="lib/dist/json-smart-1.0.9-1.jar"/>
+	<classpathentry kind="lib" path="lib/dist/fastutil-6.4.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

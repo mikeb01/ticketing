@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns="http://caucho.com/ns/resin"
+         xmlns:resin="http://caucho.com/ns/resin/core">
+
+    <servlet>
+        <servlet-name>ResponseServlet</servlet-name>
+        <servlet-class>com.lmax.ticketing.web.ResponseServlet</servlet-class>
+        <load-on-startup/>
+        <async-supported/>
+        <init-param> 
+            <param-name>port</param-name> 
+            <param-value>50002</param-value> 
+        </init-param> 
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ResponseServlet</servlet-name>
+        <url-pattern>/response/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RequestServlet</servlet-name>
+        <servlet-class>com.lmax.ticketing.web.RequestServlet</servlet-class>
+        <load-on-startup/>
+        <init-param> 
+	        <param-name>host</param-name> 
+	        <param-value>localhost</param-value> 
+        </init-param> 
+        <init-param> 
+            <param-name>port</param-name> 
+            <param-value>50001</param-value> 
+        </init-param> 
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RequestServlet</servlet-name>
+        <url-pattern>/request/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>

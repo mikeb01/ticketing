@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     Jul 30, 2011 1:21:50 PM                                                        
+
+     fokelore    
+     Programming Example from Fokelore talk
+                   
+     mikeb01                                                                
+     ====================================================================== -->
+<project name="fokelore" default="default" xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+	<description>
+            Devoxx Ticketing Demo App
+    </description>
+
+	<path id="maven-ant-tasks.classpath" path="${basedir}/bootstrap/maven-ant-tasks-2.1.3.jar" />
+	<typedef resource="org/apache/maven/artifact/ant/antlib.xml" uri="antlib:org.apache.maven.artifact.ant" classpathref="maven-ant-tasks.classpath" />
+
+	<property name="lib.runtime" value="lib/dist" />
+	<property name="lib.test" value="lib/test" />
+	<property name="module.pom" value="pom.xml" />
+
+	<!-- ================================= 
+          target: default              
+         ================================= -->
+	<target name="default" depends="depends" description="">
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: depends                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="depends">
+		<mkdir dir="${lib.runtime}" />
+		<mkdir dir="${lib.test}" />
+
+		<artifact:pom id="pom" file="${module.pom}" />
+		<artifact:dependencies pomrefid="pom" filesetid="runtime.depends.fileset" usescope="runtime" />
+		<artifact:dependencies pomrefid="pom" filesetid="test.depends.fileset" scopes="test" />
+
+		<copy todir="${lib.runtime}">
+			<fileset refid="runtime.depends.fileset" />
+			<mapper type="flatten" />
+		</copy>
+		<copy todir="${lib.test}">
+			<fileset refid="test.depends.fileset" />
+			<mapper type="flatten" />
+		</copy>
+		<touch file="lib/dependencies-resolved" />
+	</target>
+
+</project>

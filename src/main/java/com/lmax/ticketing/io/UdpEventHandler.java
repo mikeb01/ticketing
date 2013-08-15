@@ -56,10 +56,7 @@ public class UdpEventHandler implements EventHandler<Message>
     {
         buffer.flip();
         
-        if (null == channel)
-        {
-            bind();
-        }
+        DatagramChannel channel = bindAndGetChannel();
         
         while (buffer.remaining() > 0)
         {
@@ -67,5 +64,15 @@ public class UdpEventHandler implements EventHandler<Message>
         }
         
         buffer.clear();
+    }
+    
+    private DatagramChannel bindAndGetChannel() throws IOException
+    {
+        if (null == channel)
+        {
+            bind();
+        }
+        
+        return channel;
     }
 }
